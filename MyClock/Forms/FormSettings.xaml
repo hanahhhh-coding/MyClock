@@ -1,0 +1,70 @@
+﻿<Window x:Class="MyClock.Forms.FormSettings"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MyClock.Forms" xmlns:viewmodels="clr-namespace:MyClock.Forms.ViewModels" d:DataContext="{d:DesignInstance Type=viewmodels:FormSettingsViewModel}"
+        mc:Ignorable="d"
+        Topmost="True"
+        ShowInTaskbar="False"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterOwner"
+        Title="Title"
+        Icon="{x:Null}"
+        MaxWidth="300"
+        MaxHeight="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <CheckBox Grid.Row="0"
+                  Content="Always on top."
+                  IsChecked="{Binding AlwaysOnTop, Mode=TwoWay}"/>
+        <CheckBox Grid.Row="1"
+                  Content="Show more timezones."
+                  IsChecked="{Binding ShowMoreTimezone, Mode=TwoWay}"/>
+
+        <ComboBox Grid.Row="2"
+                  ItemsSource="{Binding AllTimeZones}"
+                  SelectedItem="{Binding TimeZone1, Mode=TwoWay}"
+                  Margin="5"
+                  PreviewKeyDown="ComboBox_PreviewKeyDown"/>
+
+        <ComboBox Grid.Row="3"
+                  ItemsSource="{Binding AllTimeZones}"
+                  SelectedItem="{Binding TimeZone2, Mode=TwoWay}"
+                  Margin="5"
+                  PreviewKeyDown="ComboBox_PreviewKeyDown"/>
+
+        <ComboBox Grid.Row="4"
+                  ItemsSource="{Binding AllTimeZones}"
+                  SelectedItem="{Binding TimeZone3, Mode=TwoWay}"
+                  Margin="5"
+                  PreviewKeyDown="ComboBox_PreviewKeyDown"/>
+
+        <ComboBox Grid.Row="5"
+                  ItemsSource="{Binding AllTimeZones}"
+                  SelectedItem="{Binding TimeZone4, Mode=TwoWay}"
+                  Margin="5"
+                  PreviewKeyDown="ComboBox_PreviewKeyDown"/>
+
+        <ComboBox Grid.Row="6"
+                  ItemsSource="{Binding AllTimeZones}"
+                  SelectedItem="{Binding TimeZone5, Mode=TwoWay}"
+                  Margin="5"
+                  PreviewKeyDown="ComboBox_PreviewKeyDown"/>
+
+        <ComboBox Grid.Row="7"
+                  ItemsSource="{Binding AllTimeZones}"
+                  SelectedItem="{Binding TimeZone6, Mode=TwoWay}"
+                  Margin="5"
+                  PreviewKeyDown="ComboBox_PreviewKeyDown"/>
+    </Grid>
+</Window>

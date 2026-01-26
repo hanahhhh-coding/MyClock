@@ -1,0 +1,53 @@
+﻿<Window x:Class="MyClock.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:ct="clr-namespace:MyClock.Controls"
+        xmlns:local="clr-namespace:MyClock" d:DataContext="{d:DesignInstance Type=local:MainWindowViewModel}"
+        mc:Ignorable="d"
+        Title="My Clock"
+        Background="Black"
+        MinWidth="500"
+        SizeToContent="WidthAndHeight"
+        Topmost="{Binding AlwaysOnTop, Mode=OneWay}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <ct:LargeClockDisplay VerticalAlignment="Center"
+                              HorizontalAlignment="Stretch"/>
+        <Grid Grid.Row="1"
+              Margin="5"
+              Visibility="{Binding MoreTimeVisibility, Mode=OneWay}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <ct:SmallClockControl Grid.Row="0"
+                                  Grid.Column="0"
+                                  Id="1"/>
+            <ct:SmallClockControl Grid.Row="0"
+                                  Grid.Column="1"
+                                  Id="2"/>
+            <ct:SmallClockControl Grid.Row="0"
+                                  Grid.Column="2"
+                                  Id="3"/>
+            <ct:SmallClockControl Grid.Row="1"
+                                  Grid.Column="0"
+                                  Id="4"/>
+            <ct:SmallClockControl Grid.Row="1"
+                                  Grid.Column="1"
+                                  Id="5"/>
+            <ct:SmallClockControl Grid.Row="1"
+                                  Grid.Column="2"
+                                  Id="6"/>
+        </Grid>
+    </Grid>
+</Window>
