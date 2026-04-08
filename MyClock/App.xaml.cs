@@ -30,9 +30,15 @@ namespace MyClock
         public App()
         {
             this.Exit += App_Exit;
+            this.SessionEnding += App_SessionEnding;
         }
 
         private void App_Exit(object sender, ExitEventArgs e)
+        {
+            SaveSettings();
+        }
+
+        private void App_SessionEnding(object sender, SessionEndingCancelEventArgs e)
         {
             SaveSettings();
         }
