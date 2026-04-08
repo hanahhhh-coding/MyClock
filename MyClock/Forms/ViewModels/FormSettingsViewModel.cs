@@ -6,7 +6,15 @@ namespace MyClock.Forms.ViewModels
 {
     class FormSettingsViewModel : Notifiable
     {
-        public bool AlwaysOnTop { get => App.Settings.AlwaysOnTop; set => App.Settings.AlwaysOnTop = value; }
+        public bool AlwaysOnTop
+        {
+            get => App.Settings.AlwaysOnTop;
+            set
+            {
+                App.Settings.AlwaysOnTop = value;
+                App.Current.MainWindow.Topmost = value;
+            }
+        }
         public bool ShowMoreTimezone { get => App.Settings.ShowMoreTimeZone; set => App.Settings.ShowMoreTimeZone = value; }
 
         public List<string> AllTimeZones => TimeZoneProvider.GetAllCityNames();
